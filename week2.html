@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2</title>
+    <style>
+      #quote {
+        color: salmon;
+        font-weight: bold;
+      }
+      footer {
+        background-color: aquamarine;
+        text-align: center;
+      }
+      body {
+        width: 950px;
+        margin: 0 auto;
+      }
+      h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS and The Box Model</h2>
+
+    <p>
+      We have now begun looking at ways to style and align HTML. I had some
+      previous experiences in both of these categories but there's always room
+      to learn some new information and little rules. The first thing I realized
+      was there is another way to style code segments. Last week I used the
+      &lt;pre&gt; tag, which was not inline with the other text. I looked into
+      this issue and
+      <a
+        href="https://stackoverflow.com/questions/36781075/css-inline-a-pre-tag"
+        >found</a
+      >
+      the &lt;code&gt; tag which solved the issue. So now, I can turn &quot;It
+      told me to use the relative URL in the href=&quot;&quot; attribute.&quot;
+      into &quot;It told me to use the relative URL in the
+      <code>href =&quot;&quot;</code> attribute. This still looks a bit ugly so
+      let me add some CSS to make the quotes from last week stand out a bit
+      more...
+
+      <span
+        >So now, I can turn
+        <span id="quote"
+          >&quot;It told me to use the relative URL in the href=&quot;&quot;
+          attribute.&quot;</span
+        >
+        into
+        <span id="quote"
+          >&quot;It told me to use the relative URL in the
+          <code>href =&quot;&quot;</code> attribute.</span
+        ></span
+      >
+    </p>
+
+    <p>
+      I also wanted to make a few changes on this site based on the readings.
+      First I set the width of the pages to be 960px so the text doesn't go all
+      the way to the edge of the page. I also centered the text by setting the
+      left and right margins to auto. This makes the page look a lot more
+      readable, but I also added a border and shadow around the title to make it
+      stand out.
+    </p>
+
+    <p>
+      In addition, I updated the home page to be more welcoming and prettier.
+      When I was doing this, I wanted to remove the color changing between the
+      links.
+      <a href="https://www.w3schools.com/css/css_link.asp" target="_blank"
+        >This W3Schools article</a
+      >
+      describes how to change the link states link, visited, hover, and active.
+      I set the visited state to be <code>a:link { color: navy; }</code>. Now, I
+      know that the theme and styling isn't consistant, but that's on purpose to
+      try out different techniques. And hey, Dr. Johnson isn't grading for
+      design... yet anyway :).
+    </p>
+
+    <footer>Return to the <a href="/index.html">home page.</a></footer>
+  </body>
+</html>
