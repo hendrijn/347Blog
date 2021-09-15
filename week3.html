@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 3</title>
+    <style>
+      #quote {
+        color: salmon;
+        font-weight: bold;
+      }
+      footer {
+        background-color: aquamarine;
+        text-align: center;
+      }
+      body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+      }
+      h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+      }
+      div {
+        margin-left: 60px;
+      }
+      .word-fancy {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        font-size: 0;
+        line-height: 1.5;
+      }
+      .word-fancy span {
+        font-size: 5rem;
+        display: inline-block;
+        animation: move 5s ease-in-out infinite;
+      }
+      @keyframes move {
+        0% {
+          transform: translate(-30%, 0);
+        }
+        50% {
+          text-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+        }
+        100% {
+          transform: translate(30%, 0);
+        }
+      }
+      .word-fancy span:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+
+      .word-fancy span:nth-child(3) {
+        animation-delay: 1s;
+      }
+
+      .word-fancy span:nth-child(4) {
+        animation-delay: 1.5s;
+      }
+
+      .word-fancy span:nth-child(5) {
+        animation-delay: 2s;
+      }
+
+      .word-fancy span:nth-child(6) {
+        animation-delay: 2.5s;
+      }
+      .word-fancy span:nth-child(7) {
+        animation-delay: 3s;
+      }
+      .word-fancy span:nth-child(8) {
+        animation-delay: 3.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Adding Animations</h2>
+
+    <p>
+      Getting sick this week has not been fun so I decided to research a topic
+      that's super interesting to me: animating text with CSS.
+      <a href="https://codepen.io/cbanlawi/pen/MWbemYP">This example</a> was
+      very overwhelming and complex but after looking at it for a while I was
+      able to kind of break down what was happening.
+    </p>
+
+    <p>
+      I started with a span representing each letter in the word I wished to
+      animate &lpar;so the letters are in-line but targetable&rpar;. In my case,
+      I wanted to animate &quot;Chalupas&quot; to pay homage to my all-time
+      favorite menu item from Taco Bell. I wrapped all the spans in a div where
+      <code>class=&quot;word&quot;</code>. This created the structure for my
+      animation, then I added the CSS.
+    </p>
+
+    <div class="word-basic">
+      <span>C</span>
+      <span>H</span>
+      <span>A</span>
+      <span>L</span>
+      <span>U</span>
+      <span>P</span>
+      <span>A</span>
+      <span>S</span>
+    </div>
+    <p>
+      Ok here's the nitty gritty. First I wanted to style the text so I had the
+      color match the white of the screen then set it's size and line-height. I
+      also made it inline block so I got more control over the sizing. Then I
+      used the animation property to add the means to control the movement of
+      the letters. For the spans I put
+      <code>animation: move 5s ease-in-out infinite;</code>. Then I used the
+      <code>@keyframes</code> tag to set different properties of the text at 0%,
+      50%, and 100% of the animation. Then came targeting each child aka letter.
+      I used the <code>.word span:nth-child&lpar;#&rpar;</code> selector to
+      delay the animation between each letter. Here's an example of what this
+      looked like for one of the children:
+    </p>
+
+    <pre>
+        .word span:nth-child(6) {
+            animation-delay: 2.5s;
+          }
+    </pre>
+
+    <p>And here's the finished result:</p>
+
+    <div class="word-fancy">
+      <span>C</span>
+      <span>H</span>
+      <span>A</span>
+      <span>L</span>
+      <span>U</span>
+      <span>P</span>
+      <span>A</span>
+      <span>S</span>
+    </div>
+
+    <footer>Return to the <a href="/index.html">home page.</a></footer>
+  </body>
+</html>
