@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 4</title>
+    <style>
+      #quote {
+        color: salmon;
+        font-weight: bold;
+      }
+      footer {
+        background-color: aquamarine;
+        text-align: center;
+      }
+      body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+      }
+      h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+      }
+      pre {
+        margin-left: 40px;
+      }
+      .slider {
+        overflow-y: hidden;
+        max-height: 500px; /* approximate max height */
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+        background-color: lightpink;
+        height: 200px;
+        width: 200px;
+      }
+      .slider.closed {
+        max-height: 0;
+      }
+      p{
+        display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+      }
+      .outer{
+        height: 200px;
+    width: 200px;
+    border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Toggle Sliders</h2>
+
+    <p>
+      Since starting my static website I've learned lots of new things like
+      media queries, how to make a profile card, and how to build a nav link
+      area. But I still wanted to include something unique for the blog post so
+      I looked at other fun things to do in CSS.
+      <a href="https://davidwalsh.name/css-facts"
+        >This article by David Walsh</a
+      >
+      covers lots of cool things, but the one that stood out the most to me was
+      the Slide Up and Slide Down function.
+    </p>
+
+    <p>
+      How it works is by creating a div with the class of slider filled with
+      random content. Here's a breakdown of the basic slider CSS styling.
+    </p>
+
+    <pre>
+    .slider { 
+      overflow-y: hidden;   
+      max-height: 500px; /* approximate max height */
+      transition-property: all; 
+      transition-duration: .5s; 
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+    </pre>
+
+    <p>Then we set the max height to be 0 on close. I had to look at the source code based on the demo because the website was very unclear on how the rest of the program worked. But I was able to figure it out for the most part, except for the opening animation where it's not as smooth as the closing. This is a pretty cool animation, but come on David give me everything I need to know smh.</p>
+
+    <div class="outer"><div class="slider" id="slider"><p></p>Click the button to hide and reveal me.</p></div></div>
+    <button
+      onclick="document.getElementById('slider').classList.toggle('closed');"
+    >
+      Toggle slider
+    </button>
+    <footer>Return to the <a href="/index.html">home page.</a></footer>
+  </body>
+</html>
