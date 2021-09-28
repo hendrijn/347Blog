@@ -1,0 +1,16 @@
+.max-height {
+  min-height: 70vh;
+}
+
+.foot {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 60vw;
+}
+.footer {
+  font-size: 40px;
+}

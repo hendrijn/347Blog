@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5</title>
+    <style>
+      #quote {
+        color: salmon;
+        font-weight: bold;
+      }
+      footer {
+        background-color: aquamarine;
+        text-align: center;
+      }
+      body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+      }
+      h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+      }
+      pre {
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simple JS Project</h2>
+
+    <p>
+      Now that I dove into some Javascript for the static website, I wanted to
+      research some other cool things I could do. Over the summer I tried to
+      learn about using javascript, but it got complicated really fast. I found
+      <a href="https://jsbeginners.com/hex-change-background-color-project/"
+        >this article from JS beginners</a
+      >
+      which was part of another post featuring 100ish simple projects to test
+      js. I decided to pick the hex color changer because it was actually a
+      project I though about doing over the summer. Note that because of how the
+      source files are structured, I had to make this in it's
+      <a href="week5-result1.html">own html file</a>. Let's give it a try.
+    </p>
+
+    <p>
+      First thing I needed was a container for the background color to be
+      changed in. Creating a div with a h1 text field and a button did the
+      trick. Now, the project uses a lot of bootstrap and jquery which I didn't
+      really want to get into, so I downloaded it from the github repo linked in
+      the article. Once that was set up, I began figuring out the js to make the
+      app run. This code is in the .app file.
+    </p>
+
+    <p>
+      I gather from using JS so far that methods are things called functions. So
+      I knew I would need a function with something inside. I knew that the
+      button, body, and hex value were going to play a key role so I needed to
+      add them to the function. I remembered from the allover reading that
+      variables are called const. Using the querySelector function I was able to
+      grab the #btn id from the html document. I repeated the process for the
+      others. Now, my js file looked like this:
+    </p>
+
+    <pre>
+        function(){
+            const button = document.querySelector('#btn');
+            const body = document.querySelector('body');
+            const value = document.querySelector('#hex-value');
+        }
+    </pre>
+
+    <p>
+      I remembered that in order to make the buttons do something, I would set
+      an event listener on the button, and send it another function that would
+      actually change the background color. Now my body looks like this:
+    </p>
+
+    <pre>
+        function(){
+            const button = document.querySelector('#btn');
+            const body = document.querySelector('body');
+            const value = document.querySelector('#hex-value');
+    
+            button.addEventListener('click', changeColor);
+    
+            function changeColor(){
+            
+            }
+        }
+        </pre
+    >
+
+    <p>
+      At this point, I had no idea how to get the hex value and assign it to the
+      body so I looked at the source code. There I saw the need to create a
+      const for all the values that compose a hex number. I then saw a loop
+      which was confusing until I remembered that all hex numbers have 6 values.
+      So I knew the loop was generating 6 random values to be the new hex color
+      for the page.
+    </p>
+
+    <p>
+      So then I decided to change the functionality of this site to let the user
+      specify what hex value they wanted to use. I made the js all by myself. I
+      knew from the previous solution that the
+      <code>.textContent</code> function grabbed whatever was inside the
+      specified element. So I modified the page to create a text input for
+      people to type in a code. Then I reassigned the hex variable to be the
+      pound symbol plus the textContent of the input. But this didn't work as I
+      intended so I Googled how to get the value of a text input and found this
+      method instead:
+    </p>
+    <pre>
+      hex = '#' + document.querySelector('input').value;
+    </pre>
+
+    <p>
+      This worked!!! To see the modified version of the site,
+      <a href="week5-result2.html"> click here.</a> Be aware there's no
+      validation and the pound symbol is not required in the input.
+    </p>
+
+    <footer>Return to the <a href="/index.html">home page.</a></footer>
+  </body>
+</html>
