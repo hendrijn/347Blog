@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+.tinkerer, .mixframe, .frame {
+  margin: 0 -10px;
+}
+
+.mixframe, .frame {
+  width: calc(100% + 20px);
+}
+
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > h5,
+body > h6,
+body > p,
+body > blockquote,
+body > pre,
+body > figure,
+body > .video-frame,
+body > .popcode,
+body > ul,
+body > ol {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+body > .video-frame {
+  display: block;
+}
+
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > h5,
+body > h6,
+body > pre,
+body > figure,
+body > p {
+  /* padding: 0 10px; */
+}
+
+body > blockquote,
+body > ul,
+body > ol {
+  padding-left: 50px;
+}
+
+body > blockquote {
+  background-color: #F3F3F3;
+  border-left: 10px solid #E9E9E9;
+  padding: 10px;
+  font-size: 0.9em;
+}
+
+mark {
+  padding: 4px;
+  background-color: #0045ab;
+  color: inherit;
+}
+
+code:not([class]) {
+  font-family: 'IBM Plex Mono', monospace;
+  white-space: pre-wrap;
+  background-color: #f7f7f9;
+  padding: 1px 2px;
+  border: 1px solid #e1e1e8;
+  line-height: 0.5px;
+  font-size: 85%;
+  border-radius: 3px;
+  color: #d14;
+}
+
+body > pre[class*="language-"] {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  /* padding: 10px; */
+}
+
+pre > code[class*="language-"] {
+  white-space: pre;
+  font-size: 0.83em;
+}
+
+pre[class*="language-"], code[class*="language-"] {
+  line-height: 1.3;
+}
+
+pre > code[class*="language-text"] {
+  white-space: pre-wrap;
+}
+
+img {
+  width: 100%;
+}
+
+figcaption {
+  font-size: 0.8em;
+}
+
+kbd {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-variant: small-caps;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 0.9rem;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.mixframe {
+  /* width: 100%; */
+  /* position: relative; */
+  /* left: 50%; */
+  /* right: 50%; */
+  /* margin: 30px -50vw; */
+}
+
+.tinkerer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-auto-columns: 1fr;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-auto-flow: column;
+  grid-column-gap: 1px;
+
+  /* width: 100%; */
+  /* position: relative; */
+  /* left: 50%; */
+  /* right: 50%; */
+  /* margin: 30px -50vw; */
+}
+
+.tinkerer.medium {
+  height: 400px;
+}
+
+.tinkerer.short {
+  height: 250px;
+}
+
+.editor-label, .popup-button {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.popup-button {
+  background: none;
+  border: none;
+  font-size: inherit;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.popup-button:active {
+  color: red;
+}
+
+.tinkerer > .ace_editor {
+  margin: 0;
+}
+
+.tinkerer > .html-editor {
+  white-space: pre;
+}
+
+.tinkerer > .preview {
+}
+
+.popcode {
+  display: flex;
+  /* This is reversed because it's a hack. The 11ty shortcode requires the
+   * popup link to be first to control the Markdown parsing. */
+  flex-direction: column-reverse;
+}
+
+.popcode > a {
+  display: block;
+  text-align: right;
+  font-size: 0.8em;
+  margin-top: -8px;
+}
+
+.frame {
+  /* width: 100%; */
+  height: 500px;
+  /* position: relative; */
+  /* left: 50%; */
+  /* right: 50%; */
+  /* margin: 30px -50vw; */
+}
+
+.navlinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 100px;
+}
+
+.next-link {
+  justify-self: end;
+}
+
+.toc-link {
+  justify-self: center;
+}
