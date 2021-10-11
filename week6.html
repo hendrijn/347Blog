@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6</title>
+    <style>
+      #quote {
+        color: salmon;
+        font-weight: bold;
+      }
+      footer {
+        background-color: aquamarine;
+        text-align: center;
+      }
+      body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+      }
+      h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+      }
+      pre {
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>User Login</h2>
+
+    <p>
+      Javascript and Node.js are still pretty confusing to me. There's a lot there to learn, so I wanted to take some time this week researching easy Node.js projects. It's annoying how much of the internet gives ideas without solutions because it makes me feel a lot better knowing there's code for me to look at and follow along with.
+    </p>
+
+    <p>
+      I decided to go to YouTube and find a tutorial. WebDevSimplified, a channel I found over the summer for his CSS battles, has a video for creating a login system with Node.js and several other libraries. I figured this was a perfect project that wouldn't take too much time so I watched and followed along with <a href="https://www.youtube.com/watch?v=-RCnNyD0L-s&ab_channel=WebDevSimplified">his video.</a>  
+    </p>
+
+    <p>
+      In this project, he uses several libraries to aid in the funcionality of the site. (You weren't kidding when you said there would be a lot of them). Despite the obvious Express library, we used <em>nodemon</em> to refresh the server each time we saved the file, <em>passport</em> to keep track of user information throughout their session, <em>bcrypt</em> to encrypt the user's password, and <em>method override</em> to allow the logout button to call the delete function not the patch function. I quickly became familiar with the syntax for importing libraries:
+    </p>
+
+    <pre>
+        const LIB_NAME = require('LIB_NAME')
+    </pre>
+
+    <p>
+      I also found it interesting how you can render various pages in the project using js and not a simple link tag. For example, when the user visits the url/login, the service renders the login page:
+      <pre>
+        app.get('/login', checkNotAuthenticated, (req, res) => {
+          res.render('login.ejs')
+        })
+      </pre>
+    </p>
+    
+    <p>
+      The project was pretty intense for a newbiebut luckily he offered a step-by-step tutorial. Watching him walk through the process reminded me that scripting is way more complicated than the markup stuff. FIGURE OUT HOW TO ALLOW PPL TO RUN IT!!!
+    </p>
+
+    <footer>Return to the <a href="/index.html">home page.</a></footer>
+  </body>
+</html>
