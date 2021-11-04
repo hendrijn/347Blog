@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6</title>
+    <style>
+    #quote {
+        color: salmon;
+        font-weight: bold;
+    }
+    footer {
+        background-color: aquamarine;
+        text-align: center;
+    }
+    body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+    }
+    h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+    }
+    pre {
+        margin-left: 40px;
+    }
+    </style>
+    </head>
+    <body>
+        <h2>Reinforcing React</h2>
+
+        <p>
+            The reading on how to set up React was a bit challenging. There was a lot of new information so I decided to take this week's blog post to find the React documentation on the subject. <a href="https://reactjs.org/docs/components-and-props.html">This walkthrough</a> goes through Components and Props.
+        </p>
+
+        <p>
+            It starts off saying how components are functions that return React elements and accept props as a parameter. Props are the properties of the React component... something like name, color, size, etc. Here's an example of what a component would look like: 
+        </p>
+
+        <pre>
+            export function Greeting(props) &lcub;
+                return &lt;h1&gt;Hello there, {props.name}!&lt;/h1&gt;;
+            &rcub;
+        </pre>
+
+        <p>
+            Then the post talks about composing components and how to set values for things. This implementation is slightly different because they call <code>ReactDom.render</code> to display content on the screen. I prefer how we did it in the textbook reading though. To make Hello there, Chris appear, you can create another component function called App that creates the actual page:
+        </p>
+
+        <pre>
+            function App() &lcub;
+                return (
+                    &lt;Greeting name=&quot;Chris&quot;&gt;;
+                )
+            &rcub;
+        </pre>
+
+        <p>
+            This sends <code>name="Chris"</code> to Greeting as props. The post also reiterates the importance of never modifying the props themselves. I think I get more about what components are and how to use props within them. Figuring out how to dynamically change things using states might be a topic for next week.
+        </p>
+        
+        <footer>Return to the <a href="/index.html">home page.</a></footer>
+    </body>
+</html
