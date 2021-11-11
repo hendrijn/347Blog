@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8</title>
+    <style>
+    #quote {
+        color: salmon;
+        font-weight: bold;
+    }
+    footer {
+        background-color: aquamarine;
+        text-align: center;
+    }
+    body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+    }
+    h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+    }
+    pre {
+        margin-left: 40px;
+    }
+    </style>
+    </head>
+    <body>
+        <h2>Interactive React Components</h2>
+
+        <p>
+            Now that we're diving into more React content, I thought rereading how components can respond to human actions would be a good idea. <a target="_blank" href="https://reactjs.org/tutorial/tutorial.html#passing-data-through-props">This article</a> is a game making article from the React website. But it has a really simple and understandable section on how to make a component interactive.
+        </p>
+
+        <p>
+            In this example, they have a 3x3 grid filled with numbers. They want an X to appear in a square once the user clicks on it. They already made a Square component and initialized the game in the Board component. To add the on click function to each of the squares, you'd want to add it inside the html tag in the return statement like so:
+        </p>
+
+        <pre>
+            return (
+                &lt;button className="square" onClick={ SOMEFUNCTION; }&gt;
+                    {this.props.value}
+                &lt;/button&gt;
+            )
+        </pre>
+
+        <p>
+            They're implementation wants the Square component to have a state. This allows the square to remember if it has been clicked. They add a constructor to set <code>this.state</code> to equal the value inside the square. It's also highlited that inside any component constructor needs to have a <code>super(props)</code> call. The revised version of the returned HTML looks like this:
+        </p>
+
+        <pre>
+            return (
+                &lt;button className="square" onClick={() => this.setState({value: 'X'})}&gt;
+                    {this.state.value}
+                &lt;/button&gt;
+            )
+        </pre>
+
+        <p>
+            Some other neat things the article mentions is that by having this return statement in the render method, React will re-render the individual Square component when it is clicked. In addition, React will automatically update any child components of the Square due to the setState method being called.
+        </p>
+        
+        <footer>Return to the <a href="/index.html">home page.</a></footer>
+    </body>
+</html>
