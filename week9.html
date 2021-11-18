@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 9</title>
+    <style>
+    #quote {
+        color: salmon;
+        font-weight: bold;
+    }
+    footer {
+        background-color: aquamarine;
+        text-align: center;
+    }
+    body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: white;
+    }
+    h2 {
+        display: inline;
+        margin: 20px 0px;
+        box-shadow: 5px 5px 10px gray;
+        border-left: 10px solid aquamarine;
+        box-sizing: border-box;
+        padding: 0 5px;
+    }
+    pre {
+        margin-left: 40px;
+    }
+    </style>
+    </head>
+    <body>
+        <h2>Routes and NavLinks</h2>
+
+        <p>
+            I never really thought about how multiple pages are encorperated in dynamic apps. I assumed that we'd yse multiple html files like a normal, static, website. But it makes sense that this approach isn't useful for React because there's one main html file that does all the work for distributing the app. I decided to explore more about Routes and NavLinks.
+        </p>
+
+        <p>
+            I found a really helpful, and up-to-date, <a href="https://www.techomoro.com/how-to-create-a-multi-page-website-with-react-in-5-minutes/" target="_blank">resource</a> that describes making a multi-page app in 5 minutes. Mainly, the app is to showcase how navigation links can change the content to show different views. Using the <code>NavLink</code> component is super helpful for this. This allows the active link to be highlighted on its own! Then it's up to the css styling to determine any other cool effects. Here's what a NavLink to the contact page would look like:
+        </p>
+
+        <pre>
+            &lt;NavLink to="/contact"&gt;Contact&lt;/NavLink&gt;
+        </pre>
+
+        <p>
+            It's helpful to put these in divs to allow easy selection with css. I also like how he mentions the use of slugs. In the textbook reading, this concept was a bit tricky for me to understand. He describes it as "a dynamic route where the post-slug (from the url) changes with each post." Which means that something like a blog post is rendered depending on the specific post typed in the URL. He says, "For example /blog/first-post, /blog/second-post etc." Here's what this might look like, then I'll explain.
+        </p>
+
+        <pre>
+            &lt;Route path="/blog" element={&lt;Blog /&gt;}&gt;
+                &lt;Route path="" element={&lt;Posts /&gt;} /&gt;
+                &lt;Route path=":postSlug" element={&lt;Post /&gt;} /&gt;
+            &lt;/Route&gt;
+        </pre>
+
+        <p>
+            /blog acts as the parent for all different kinds of posts. Just typing /blog will take the user to the page with all posts. If they specify a specific post in the url, like /blog/first-post, the first-post becomes the postSlug and the rendered post will be first-post. 
+        </p>
+
+        <p>
+            The Post component, needs to actually grab the post specified by the slug. The useParams function allows us to grab the slug from the request to render the Post. The useEffect function would actually retrieve the post from a database.
+        </p>
+
+        <pre>
+            import React, { useEffect } from "react";
+            import { useParams } from "react-router";
+
+            function Post() {
+                let { postSlug } = useParams();
+
+                useEffect(() => {
+                    // Fetch post using the postSlug
+                }, [postSlug]);
+                
+                ...
+        </pre>
+        
+        <footer>Return to the <a href="/index.html">home page.</a></footer>
+    </body>
+</html>
